@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<module>
+    <id>VirtoCommerce.Loyalty</id>
+    <version>2.1.0</version>
+    <platformVersion>2.10.0</platformVersion>
+    <dependencies>
+        <dependency id="VirtoCommerce.Core" version="2.20.0" />
+        <dependency id="VirtoCommerce.Customer" version="2.11.0" />
+    </dependencies>
+  
+    <title>Sample Managed Module</title>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+    <authors>
+        <author>VirtoCommerce</author>
+    </authors>
+
+    <assemblyFile>VirtoCommerce.LoyaltyModule.Web.dll</assemblyFile>
+    <moduleType>VirtoCommerce.LoyaltyModule.Web.Module, VirtoCommerce.LoyaltyModule.Web</moduleType>
+
+    <styles>
+        <directory virtualPath="$/Content/css" searchPattern="*.css" searchSubdirectories="true" />
+    </styles>
+    <scripts>
+        <directory virtualPath="$/Scripts" searchPattern="*.js" searchSubdirectories="true" />
+    </scripts>
+
+    <settings>
+        <group>
+            <setting>
+                <name>Sample.Managed.General.String</name>
+                <valueType>string</valueType>
+                <defaultValue>qwerty</defaultValue>
+                <title>String</title>
+                <description>A text setting</description>
+            </setting>
+            <setting>
+                <name>Sample.Managed.General.Password</name>
+                <valueType>secureString</valueType>
+                <defaultValue>qwerty</defaultValue>
+                <title>Password</title>
+                <description>A secure text setting</description>
+            </setting>
+            <setting>
+                <name>Sample.Managed.General.Integer</name>
+                <valueType>integer</valueType>
+                <defaultValue>123</defaultValue>
+                <title>Integer</title>
+                <description>An integer setting</description>
+            </setting>
+            <setting>
+                <name>Sample.Managed.General.Decimal</name>
+                <valueType>decimal</valueType>
+                <defaultValue>123.45</defaultValue>
+                <title>Decimal</title>
+                <description>A decimal setting</description>
+            </setting>
+        </group>
+        <group name="Advanced">
+            <setting>
+                <name>Sample.Managed.Advanced.Boolean1</name>
+                <valueType>boolean</valueType>
+                <defaultValue>true</defaultValue>
+                <title>Boolean1</title>
+                <description>A boolean setting</description>
+            </setting>
+            <setting>
+                <name>Sample.Managed.Advanced.Boolean2</name>
+                <valueType>boolean</valueType>
+                <defaultValue>false</defaultValue>
+                <title>Boolean2</title>
+                <description>A boolean setting</description>
+            </setting>
+            <setting>
+                <name>Sample.Managed.Advanced.Select</name>
+                <valueType>string</valueType>
+                <allowedValues>
+                    <value>qwerty</value>
+                    <value>asdfgh</value>
+                    <value>zxcvb</value>
+                </allowedValues>
+                <defaultValue>asdfgh</defaultValue>
+                <title>Select</title>
+                <description>Select one of the allowed values</description>
+            </setting>
+        </group>
+    </settings>
+</module>
