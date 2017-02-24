@@ -1,8 +1,11 @@
-﻿using Microsoft.Practices.Unity;
+﻿using System;
+using Microsoft.Practices.Unity;
 using VirtoCommerce.CustomerModule.Data.Model;
 using VirtoCommerce.CustomerModule.Data.Repositories;
 using VirtoCommerce.Domain.Customer.Model;
+using VirtoCommerce.Domain.Order.Events;
 using VirtoCommerce.LoyaltyModule.Data.Model;
+using VirtoCommerce.LoyaltyModule.Data.Observers;
 using VirtoCommerce.LoyaltyModule.Data.Repositories;
 using VirtoCommerce.LoyaltyModule.Data.Services;
 using VirtoCommerce.Platform.Core.Common;
@@ -34,6 +37,7 @@ namespace VirtoCommerce.LoyaltyModule.Web
         public override void Initialize()
         {
             base.Initialize();
+            container.RegisterType<IObserver<OrderChangeEvent>, UpdateLoyaltyObserver>("UpdateLoyaltyObserver");
             container.RegisterType<ICustomerLoyaltyService, CustomerLoyaltySerrviceImpl>();
             container.RegisterType<ICustomerRepository>(new InjectionFactory(c => new CustomerLoyalityRepositoryImpl(ConnectionStringName, container.Resolve<AuditableInterceptor>(), new EntityPrimaryKeyGeneratorInterceptor())));
         }
