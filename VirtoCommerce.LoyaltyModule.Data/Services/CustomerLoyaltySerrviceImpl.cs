@@ -23,6 +23,20 @@ namespace VirtoCommerce.LoyaltyModule.Data.Services
             return loyaltyRepository.LoyaltyStatuses.ToArray();
         }
 
+        public LoyaltyStatus GetById(string id)
+        {
+            return loyaltyRepository.LoyaltyStatuses.FirstOrDefault(x => x.Id == id);
+        }
+
+        public LoyaltyStatus CreateStatus(LoyaltyStatus status)
+        {
+            loyaltyRepository.Add(status);
+
+            CommitChanges(loyaltyRepository);
+
+            return status;
+        }
+
         public void UpdateStatuses(LoyaltyStatus[] statuses)
         {
             foreach (var status in statuses)

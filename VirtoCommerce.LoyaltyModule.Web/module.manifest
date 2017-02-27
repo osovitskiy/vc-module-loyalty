@@ -8,7 +8,7 @@
         <dependency id="VirtoCommerce.Customer" version="2.11.0" />
     </dependencies>
   
-    <title>Sample Managed Module</title>
+    <title>Customer loyalty module</title>
     <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
     <authors>
         <author>VirtoCommerce</author>
@@ -84,4 +84,12 @@
             </setting>
         </group>
     </settings>
+
+    <group name="Store">
+        <permission id="loyalty:access" name="Open loyalty menu"/>
+        <permission id="loyalty:create" name="Create a loyalty"/>
+        <permission id="loyalty:read" name="View loyalty data"/>
+        <permission id="loyalty:update" name="Update loyalty"/>
+        <permission id="loyalty:delete" name="Delete loyalty"/>
+    </group>
 </module>

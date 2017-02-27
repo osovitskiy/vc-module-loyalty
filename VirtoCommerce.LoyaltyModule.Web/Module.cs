@@ -37,9 +37,10 @@ namespace VirtoCommerce.LoyaltyModule.Web
         public override void Initialize()
         {
             base.Initialize();
-            container.RegisterType<IObserver<OrderChangeEvent>, UpdateLoyaltyObserver>("UpdateLoyaltyObserver");
+            //container.RegisterType<IObserver<OrderChangeEvent>, UpdateLoyaltyObserver>("UpdateLoyaltyObserver");
             container.RegisterType<ICustomerLoyaltyService, CustomerLoyaltySerrviceImpl>();
-            container.RegisterType<ICustomerRepository>(new InjectionFactory(c => new CustomerLoyalityRepositoryImpl(ConnectionStringName, container.Resolve<AuditableInterceptor>(), new EntityPrimaryKeyGeneratorInterceptor())));
+            //container.RegisterType<ICustomerRepository>(new InjectionFactory(c => new CustomerLoyalityRepositoryImpl(ConnectionStringName, container.Resolve<AuditableInterceptor>(), new EntityPrimaryKeyGeneratorInterceptor())));
+            container.RegisterType<ICustomerLoyalityRepository>(new InjectionFactory(c => new CustomerLoyalityRepositoryImpl(ConnectionStringName, container.Resolve<AuditableInterceptor>(), new EntityPrimaryKeyGeneratorInterceptor())));
         }
 
         public override void PostInitialize()

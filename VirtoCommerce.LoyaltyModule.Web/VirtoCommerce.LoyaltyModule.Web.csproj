@@ -139,6 +139,8 @@
     <Content Include="module.manifest">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Localizations\en.VirtoCommerce.Loyalty.json" />
+    <Content Include="Scripts\blades\loyalty-status-detail.tpl.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -148,10 +150,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\loyaltyModule.css" />
-    <Content Include="Scripts\blades\blade1.js" />
-    <Content Include="Scripts\blades\blade1.tpl.html" />
+    <Content Include="Scripts\blades\loyalty-status-detail.js" />
+    <Content Include="Scripts\blades\loyalty-status-list.js" />
+    <Content Include="Scripts\blades\loyalty-status-list.tpl.html" />
     <Content Include="Scripts\loyaltyModule.js" />
-    <Content Include="Scripts\resources\loyaltyModuleApi.js" />
+    <Content Include="Scripts\resources\loyaltyStatuses.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

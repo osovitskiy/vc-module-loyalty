@@ -1,0 +1,27 @@
+﻿<div class="blade-static __bottom" ng-include="'$(Platform)/Scripts/common/templates/create.tpl.html'" ng-if="blade.isNew"></div>
+<div class="blade-content __medium-wide">
+    <div class="blade-inner">
+        <div class="inner-block">
+            <form class="form" name="detailForm">
+                <div class="columns" ng-init="setForm(detailForm)">
+                    <div class="column">
+                        <div class="form-group">
+                            <label class="form-label">{{ 'loyalty.blades.loyalty-status-detail.labels.name' | translate }}</label>
+                            <div class="form-input">
+                                <input ng-model="blade.currentEntity.name" focus-on required placeholder="{{ 'loyalty.blades.loyalty-status-detail.placeholders.name' | translate }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label class="form-label">{{ 'loyalty.blades.loyalty-status-detail.labels.threshold' | translate }}</label>
+                            <div class="form-input">
+                                <input money required ng-model="blade.currentEntity.threshold" ng-model-options="{ updateOn: 'blur' }">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,14 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using VirtoCommerce.Platform.Core.Common;
 
 namespace VirtoCommerce.LoyaltyModule.Data.Model
 {
-    public class LoyaltyStatus
+    public class LoyaltyStatus : AuditableEntity
     {
-        [Required]
-        [StringLength(64)]
-        public string Id { get; set; }
-
         [StringLength(255)]
         public string Name { get; set; }
 

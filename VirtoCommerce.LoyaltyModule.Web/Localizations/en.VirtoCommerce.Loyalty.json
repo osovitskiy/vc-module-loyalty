@@ -1,0 +1,34 @@
+{
+    "loyalty": {
+        "main-menu-title": "Loyalty",
+        "blades": {
+            "loyalty-status-list": {
+                "title": "Statuses",
+                "labels": {
+                    "name": "Name",
+                    "threshold": "Threshold"
+                }
+            },
+            "loyalty-status-detail": {
+                "subtitle": "Status details",
+                "labels": {
+                    "name": "Name",
+                    "threshold": "Threshold"
+                },
+                "placeholders": {
+                    "name": "Enter name"
+                }
+            }
+        },
+        "dialogs": {
+            "loyalty-status-delete": {
+                "title": "Delete confirmation",
+                "message": "Are you sure you want to delete this Loyalty?"
+            },
+            "loyalty-status-save": {
+                "title": "Save changes",
+                "message": "The Loyalty has been modified. Do you want to save changes?"
+            }
+        }
+    }
+}

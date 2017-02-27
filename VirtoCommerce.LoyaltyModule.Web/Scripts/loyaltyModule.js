@@ -1,5 +1,5 @@
 ﻿//Call this to register our module to main application
-var moduleTemplateName = "virtoCommerce.samples.managed";
+var moduleTemplateName = "virtoCommerce.loyaltyModule";
 
 if (AppDependencies != undefined) {
     AppDependencies.push(moduleTemplateName);
@@ -9,15 +9,16 @@ angular.module(moduleTemplateName, [])
 .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('workspace.managedModule', {
-                url: '/managedModule',
+            .state('workspace.loyaltyModule', {
+                url: '/loyalty',
                 templateUrl: '$(Platform)/Scripts/common/templates/home.tpl.html',
                 controller: [
                     '$scope', 'platformWebApp.bladeNavigationService', function ($scope, bladeNavigationService) {
                         var newBlade = {
-                            id: 'blade1',
-                            controller: 'virtoCommerce.samples.managed.blade1Controller',
-                            template: 'Modules/$(virtoCommerce.samples.managed)/Scripts/blades/blade1.tpl.html',
+                            id: 'loyaltyStatusList',
+                            title: 'loyalty.blades.loyalty-status-list.title',
+                            controller: 'virtoCommerce.loyaltyModule.loyaltyStatusListController',
+                            template: 'Modules/$(VirtoCommerce.Loyalty)/Scripts/blades/loyalty-status-list.tpl.html',
                             isClosingDisabled: true
                         };
                         bladeNavigationService.showBlade(newBlade);
@@ -30,14 +31,13 @@ angular.module(moduleTemplateName, [])
     function ($rootScope, mainMenuService, widgetService, $state) {
         //Register module in main menu
         var menuItem = {
-            path: 'browse/managedModule',
+            path: 'browse/loyalty',
             icon: 'fa fa-cube',
-            title: 'Managed Module',
+            title: 'loyalty.main-menu-title',
             priority: 100,
-            action: function () { $state.go('workspace.managedModule') },
-            permission: 'managedModulePermission'
+            action: function () { $state.go('workspace.loyaltyModule') },
+            permission: 'loyalty:access'
         };
         mainMenuService.addMenuItem(menuItem);
     }
 ]);
-

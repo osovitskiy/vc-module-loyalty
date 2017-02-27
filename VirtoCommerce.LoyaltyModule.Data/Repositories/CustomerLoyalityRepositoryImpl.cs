@@ -2,18 +2,19 @@
 using System.Linq;
 using VirtoCommerce.CustomerModule.Data.Repositories;
 using VirtoCommerce.LoyaltyModule.Data.Model;
+using VirtoCommerce.Platform.Data.Infrastructure;
 using VirtoCommerce.Platform.Data.Infrastructure.Interceptors;
 
 namespace VirtoCommerce.LoyaltyModule.Data.Repositories
 {
-    public class CustomerLoyalityRepositoryImpl : CustomerRepositoryImpl, ICustomerLoyalityRepository
+    public class CustomerLoyalityRepositoryImpl : /*CustomerRepositoryImpl*/ EFRepositoryBase, ICustomerLoyalityRepository
     {
         public CustomerLoyalityRepositoryImpl()
         {
         }
 
         public CustomerLoyalityRepositoryImpl(string nameOrConnectionString, params IInterceptor[] interceptors)
-            : base(nameOrConnectionString, interceptors)
+            : base(nameOrConnectionString, null, interceptors)
         {
         }
 
@@ -21,9 +22,9 @@ namespace VirtoCommerce.LoyaltyModule.Data.Repositories
         {
             #region Contact2
 
-            modelBuilder.Entity<Contact2DataEntity>().HasKey(x => x.Id).Property(x => x.Id);
-            modelBuilder.Entity<Contact2DataEntity>().HasOptional(x => x.LoyaltyStatus).WithMany().HasForeignKey(x => x.LoyaltyStatusId);
-            modelBuilder.Entity<Contact2DataEntity>().ToTable("Contact2");
+            //modelBuilder.Entity<Contact2DataEntity>().HasKey(x => x.Id).Property(x => x.Id);
+            //modelBuilder.Entity<Contact2DataEntity>().HasOptional(x => x.LoyaltyStatus).WithMany().HasForeignKey(x => x.LoyaltyStatusId);
+            //modelBuilder.Entity<Contact2DataEntity>().ToTable("Contact2");
 
             #endregion
 
@@ -36,10 +37,10 @@ namespace VirtoCommerce.LoyaltyModule.Data.Repositories
             base.OnModelCreating(modelBuilder);
         }
 
-        public IQueryable<Contact2DataEntity> Contacts2
-        {
-            get { return GetAsQueryable<Contact2DataEntity>(); }
-        }
+        //public IQueryable<Contact2DataEntity> Contacts2
+        //{
+        //    get { return GetAsQueryable<Contact2DataEntity>(); }
+        //}
 
         public IQueryable<LoyaltyStatus> LoyaltyStatuses
         {

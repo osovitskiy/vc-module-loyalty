@@ -90,6 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201702262340255_Initial.cs" />
+    <Compile Include="Migrations\201702262340255_Initial.Designer.cs">
+      <DependentUpon>201702262340255_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Contact2.cs" />
     <Compile Include="Model\Contact2DataEntity.cs" />
@@ -104,6 +108,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702262340255_Initial.resx">
+      <DependentUpon>201702262340255_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
